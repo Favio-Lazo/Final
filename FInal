@@ -1,0 +1,52 @@
+import random
+
+questions = [ {"question": "In what galaxy are we located?",
+        "answer": "The Milky Way"},
+    {"question": "Who painted The Last Supper?",
+        "answer": "Leonardo Da Vinci"},
+    {"question": "What is the largest country?",
+        "answer": "Russia"},
+    {"question": "What is the capital of England?",
+        "answer": "London"},
+    {"question": "Who painted the Mona Lisa?",
+        "answer": "Leonardo da Vinci"},
+    {"question": "Who was the leader of Germany during WW2",
+        "answer": "Hitler"},
+    {"question": "What is the largest animal on earth?",
+        "answer": "Blue whale"},
+    {"question": "In what country is located Teh Eiffel Tower?",
+        "answer": "France"},
+    {"question": "What is the most populous country in the world?",
+        "answer": "China"},
+    {"question": "What is the currency of Japan?",
+        "answer": "Yen"} ]
+ 
+def check():
+    question = random.choice(questions)
+    print(question["question"])
+    answer = input("Your answer: ")
+    if answer.lower() == question["answer"].lower():
+        print("Correct!")
+        return True
+    else:
+        print("Incorrect. The correct answer is:", question["answer"])
+        return False
+        
+
+player1_score = 0
+player2_score = 0
+
+for i in range(10):  
+    print("Question", i+1)
+    print("Player 1's turn:")
+    if check():
+        player1_score += 1
+    print("Player 2's turn:")
+    if check():
+        player2_score += 1
+
+print("Game over!")
+print("Player 1 score:", player1_score)
+print("Player 2 score:", player2_score)
+
+
